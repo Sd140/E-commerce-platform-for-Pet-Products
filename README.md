@@ -1,54 +1,39 @@
 # PetOzone.github.io
 
-etOzone is a website of shops that allows users to select and buy pet accessories and food from the comfort of their homes. The websitr is made using Flask and SQL. Website Flow:
+PetOzone is an ecommerce website that allows user to select and buy pet accessories,food,medicines,etc from the comfort of their homes.User can book can appointment of veterinarian for their pets from the information provided on website.
+The website is made using Flask and SQL. Website Flow:
 
 When a user first visits the website they will be asked to register and provide their details.
-They can then log in to view the homepage of the website.
-On that home page they can view and add to their cart various accessories and food products for their pets.
-They can also enter an item to search in the searchbox and view all products related to the term they entered.
-They can visit their cart to see the products they want to buy and can also remove them.
+User can then log in to view the homepage of the website.
+On products page user can view products and add to their cart various accessories,food,etc for their pets.
+User can also enter an item to search in the searchbox and view all products related to the term they entered.
+User can visit their cart to see the products they want to buy and can also remove them.
 Check Out and see the final price to pay along with the items bought.
-MySQL
+User can view their previously bought items in Orders page.
+
+
+**MySQL**
 MySQL server is used as databse to store the data required in making this website. The various tables used are:
 
 Customer: In this table, we will be storing users data such as cust_id, username, contact_no, password, email. We will be storing this information when a user registers on the website & we will be using this information when a user wants to log in .
 
-Constraints: cust_id is primary Key, Contact_no should be 10 digits, Email is UNIQUE.
-
 Product : The details and stock of products available on our website will be stored in this table. Following are the attributes: , prod_id , pet_id , price , stock_quantity , product_sub_category.
-
-Constraints: prod_id is Primary key, price is Not Null, stock_quantity is Not Null, product_sub_category_id is a Foreign key from table product, sub category, pet_id is Foreign key referencing table pets.
 
 Prod_category: Categories of products available like food,medicine,clothes and accessories in product table are stored here. Following are the attributes: , prod_category_id , prod_name.
 
-Constraints: prod_category_id is primary key, prod_name is Not Null.
-
 Prod_sub_category : Names of categories of products in product_categories are stored here. For example, pedigree in the food category. Following are the attributes: , prod_sub_category_id , name , prod_category_id.
-
-Constraints: prod_sub_category_id is primary key, name is Not Null, product_category_id is the foriegn key referencing table product_category.
 
 Cart :Products chosen by customers to buy are added to carts. Following are the attributes: , prod_id , cust_id , quantity .
 
-Constraints: prod_id is foriegn key referencing table product, cust_id is foreign key referencing table customer, quantity is Not Null.
-
 Order : All the details of customers’ final order are stored here. Following are the attributes: , order_id , order_date , payment_mode , payment_date , invoice_amt , quantity , delivery_location_id , cust_id.
-
-Constraints: order_id is Primary key, payment_mode is Not Null, delivery_location_id is foreign key referencing table delivery location, cust_id is foreign key referencing table customers.
 
 Shipment: Order shipment details will be stored in this table. Following are the attributes: , shipment_id , shipment_date , shipment_status , delivery_date , order_id , cust_id.
 
-Constraints: shipment_id is primary key, order_id is Foreign Key referencing order table, cust_id is foreign key referencing the customer table.
-
 Delivery Location : Delivery locations entered by users are stored here. Following are the attributes: , delivery_location_id , location_name , address , cust_id.
-
-Constraints: delivery_location_id is Primary key, address is Not Null, cust_id is foreign key referencing table customers.
 
 Pets : Pets with their id are stored here , pet_id , pet_type.
 
-Constraints: pet_id is primary key, pet_type is not NULL.
-
 Relatonal Database Schema
-Relational Database schema
 
 app.py
 This is where Flask is used to create the website. Its various functions are:
