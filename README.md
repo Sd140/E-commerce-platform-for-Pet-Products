@@ -16,6 +16,7 @@ User can view their previously bought items in Orders page.
 
 
 **MySQL**
+
 MySQL server is used as databse to store the data required in making this website. The various tables used are:
 
 Customer: In this table, we will be storing users data such as cust_id, username, contact_no, password, email. We will be storing this information when a user registers on the website & we will be using this information when a user wants to log in .
