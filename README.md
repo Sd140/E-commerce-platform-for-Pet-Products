@@ -1,7 +1,10 @@
 # PetOzone.github.io
 
 PetOzone is an ecommerce website that allows user to select and buy pet accessories,food,medicines,etc from the comfort of their homes.User can book can appointment of veterinarian for their pets from the information provided on website.
-The website is made using Flask and SQL. Website Flow:
+
+The website is made using HTML,CSS,Javascript,Bootstrap,Tailwind for frontend and Flask as a beckedn language with MySQL for database. 
+
+Website Flow:
 
 When a user first visits the website they will be asked to register and provide their details.
 User can then log in to view the homepage of the website.
@@ -39,16 +42,28 @@ app.py
 This is where Flask is used to create the website. Its various functions are:
 
 login_required() is a decorator that ensures that only logged in users can access a part of the website.
+
 rupees() is a Flask filter that will convert the value passed to it to a float with 2 decimal places and add a ruppee sign in front of it.
-login() function depicts the login route where a form will be displayed to the user via login.html template. On submitting the form if the user is present in the databse then they will be successfully logged in and redirected to the index page otherwise an appropiate error message will be displayed to them.
+
+login() function depicts the login route where a form will be displayed to the user via login.html template. On submitting the form if the user is present in the database then they will be successfully logged in and redirected to the index page otherwise an appropiate error message will be displayed to them.
+
 The logout() functions depicting the logout route will log the user out.
+
 the register() route will display a form to the user via the register.html template which if correctly submitted will register the user to the website and add their details to the databse. They will then be redirected to the login page.
+
 The index() depicts the homepage of the website via index.html which will show dogs and cats as 2 options and on clicking either of them the suers will be redirected to the respective pages.
+
 dogs() function depicts the dogs route which will display the products for dogs with title, image, price on each product. Users have an option to add the product to their carts. The appropiate changes are done in the database.
+
 cats() function depicts the cats route which will display the products for cats with title, image, price on each product. Users have an option to add the product to their carts. The appropiate changes are done in the database.
+
 The cart() function depicting cart route shows the user the products in their cart. Users can remove a product or confirm their order. They will then be redirected to a confirmation page.
+
 address() route displays a form for the user to input their address where the order will be delivered. The address is stored in the databse the first time and displayed to the user on multiple uses.
+
 order() function depicting order route shows the users the status of their orders, i.e. the orders that have delivered already, are being processed, are on the way,etc.
+
 search() function takes input from search box and displays all products that are in the category of the input, start with the input and have the input in the product.
+
 layout.html
-This html file contains the layout of the page from which all other html files extend. The page has a navbar at the top. The name of the page is in the top left with the links for register and login in the left. There is also a search box which enables users to search for all the products. Only a user who has logged in can view the links for products, cart, orders,etc. the rest of the page is according to each html page.
+This html file contains the layout of the page from which all other html files extend. The page has a navbar at the top and a footer at bottom which will be applied to all the pages in the website.
