@@ -66,5 +66,6 @@ order() function depicting order route shows the users the status of their order
 
 search() function takes input from search box and displays all products that are in the category of the input, start with the input and have the input in the product.
 
-layout.html
+**Layout.html**
+
 This html file contains the layout of the page from which all other html files extend. The page has a navbar at the top and a footer at bottom which will be applied to all the pages in the website.
